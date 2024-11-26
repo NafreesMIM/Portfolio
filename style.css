@@ -18,14 +18,14 @@ body {
 
 /* Navbar */
 .navbar {
-    position: fixed; /* Keeps the navbar fixed at the top */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Optional: makes navbar slightly transparent */
-    z-index: 10; /* Ensures navbar stays on top of other elements */
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
     padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: adds shadow to navbar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .navbar.scrolled {
@@ -43,12 +43,14 @@ body {
     list-style: none;
     display: flex;
     gap: 20px;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .nav-links li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 18px; /* Adjust font size for larger screens */
     padding: 10px 15px;
     transition: background-color 0.3s, transform 0.3s;
     border-radius: 5px;
@@ -61,7 +63,7 @@ body {
 
 /* Hamburger Menu for Mobile */
 .hamburger {
-    display: none; /* Hidden by default */
+    display: none;
     cursor: pointer;
 }
 
@@ -70,15 +72,42 @@ body {
     color: white;
 }
 
+/* Close Button */
+.close-btn {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
 /* Responsive Styles */
+@media (max-width: 1024px) {
+    /* Tablet */
+    .navbar .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li a {
+        font-size: 20px; /* Increase font size on tablet */
+    }
+
+    .close-btn {
+        display: block; /* Show the close button on tablet and mobile */
+    }
+}
+
 @media (max-width: 768px) {
-    /* Hide the nav-links on small screens */
+    /* Mobile Devices */
     .nav-links {
         display: none;
         width: 100%;
         text-align: center;
         position: absolute;
-        top: 60px; /* Adjust depending on navbar height */
+        top: 60px;
         left: 0;
         background-color: rgba(0, 0, 0, 0.8);
         padding: 10px 0;
@@ -95,36 +124,80 @@ body {
         font-size: 20px;
     }
 
-    /* Show the hamburger icon */
     .hamburger {
         display: block;
     }
 
-    /* When the navbar is active (when hamburger is clicked), show the nav-links */
     .navbar.active .nav-links {
         display: flex;
+        flex-direction: column; /* Stack the items vertically */
+    }
+
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
     }
 }
 
-/* For smaller screens */
 @media (max-width: 480px) {
+    /* Small screens (mobile) */
     .nav-links li a {
-        font-size: 16px;
+        font-size: 16px; /* Adjust font size for smaller screens */
     }
 }
-
-
-/* Logo */
+/* Logo Design */
 .logo {
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Adjust font size for larger screens */
     font-weight: bold;
-    color: #ff5555;
     text-transform: uppercase;
     letter-spacing: 3px;
-    position: relative;
+    color: #ff5555; /* Primary logo color */
     text-decoration: none;
+    position: relative; /* For additional styling effects */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
 }
+
+/* Add gradient effect to the logo text */
+.logo span {
+    background: linear-gradient(90deg, #ff5555, #009CFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Only show gradient text */
+}
+
+/* Add shadow to make the logo pop */
+.logo {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Animation */
+.logo:hover {
+    color: #009CFF;
+    transform: scale(1.1); /* Slightly increase size on hover */
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .logo {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+}
+
 
 /* Hero Section */
 .hero-section {
@@ -137,7 +210,7 @@ body {
     height: 100vh;
     padding: 0 20px;
     padding-top: 300px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('background.jpg')no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('background.jpg') no-repeat;
     background-position: center;
     background-size: 45%;
     color: #fff;
@@ -172,8 +245,6 @@ body {
     color: #ccc;
     animation: fadeIn 2s ease-in-out;
 }
-/* Hero Section Content */
-
 
 .hero-content {
     max-width: 800px;
@@ -183,8 +254,6 @@ body {
     font-size: 4rem;
     margin-bottom: 20px;
 }
-
-
 
 .hero-subtext {
     font-size: 1.2rem;
@@ -401,10 +470,34 @@ body {
     text-decoration: none;
     border-radius: 50px;
     transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .project-info .btn:hover {
     background-color: #e64444;
+}
+
+/* Make the button responsive */
+@media (max-width: 1024px) {
+    .project-info .btn {
+        font-size: 1.1rem; /* Slightly smaller font for tablets */
+        padding: 8px 25px;  /* Adjust padding for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-info .btn {
+        font-size: 1rem;  /* Smaller font size on mobile */
+        padding: 8px 20px;  /* Smaller padding on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-info .btn {
+        font-size: 0.9rem;  /* Even smaller font size on very small screens */
+        padding: 6px 15px;  /* Smaller padding on very small screens */
+    }
 }
 
 /* Contact Section */
@@ -455,46 +548,22 @@ body {
     font-size: 1rem;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
 
-    .navbar .container {
-        flex-direction: column;
-        align-items: center;
-    }
+/* Footer */
+footer {
+    background-color: #333;
+    padding: 40px 0;
+    color: white;
+    text-align: center;
+}
 
-    .hero-content h1 {
-        font-size: 3rem;
-    }
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 10px;
+}
 
-    .hero-content h2 {
-        font-size: 1.5rem;
-    }
-
-    .about-content, .experience, .skills {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .experience-card, .skill-card {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    .education-card {
-        flex-direction: column;
-        width: 90%;
-    }
-
-    .projects-list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project-card {
-        width: 80%;
-    }
+footer a:hover {
+    color: #ff5555;
 }
