@@ -100,3 +100,11 @@ function type() {
 }
 
 type();
+
+// JavaScript to toggle the navbar
+const hamburger = document.getElementById('hamburger');
+const navbar = document.querySelector('.navbar');
+
+hamburger.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
