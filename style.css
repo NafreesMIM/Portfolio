@@ -50,10 +50,10 @@ body {
 .nav-links li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px; /* Adjust font size for larger screens */
+    font-size: 18px;
     padding: 10px 15px;
-    transition: background-color 0.3s, transform 0.3s;
     border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .nav-links li a:hover {
@@ -62,26 +62,80 @@ body {
 }
 
 /* Hamburger Menu for Mobile */
-.hamburger {
+.hamburger,
+.close-icon {
     display: none;
     cursor: pointer;
+    z-index: 15;
 }
 
-.hamburger i {
+.hamburger i,
+.close-icon i {
     font-size: 30px;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        font-size: 20px;
+        padding: 15px 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .close-icon {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    .navbar.active .nav-links {
+        display: flex;
+    }
 }
 
 /* Close Button */
-.close-btn {
+/* Hide the close button by default */
+.close-icon {
     display: none;
+    cursor: pointer;
+}
+
+.close-icon i {
     font-size: 30px;
     color: white;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 20px;
 }
+
+/* When the navbar is active, show the close button and hide the hamburger */
+.navbar.active .close-icon {
+    display: block;
+}
+
+.navbar.active .hamburger {
+    display: none;
+}
+
 
 /* Responsive Styles */
 @media (max-width: 1024px) {

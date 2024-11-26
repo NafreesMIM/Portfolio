@@ -102,9 +102,20 @@ function type() {
 type();
 
 // JavaScript to toggle the navbar
-const hamburger = document.getElementById('hamburger');
-const navbar = document.querySelector('.navbar');
+const hamburger = document.querySelector('.hamburger');
+const closeIcon = document.querySelector('.close-icon');
+const navLinks = document.querySelector('.nav-links');
 
+// Open Navbar
 hamburger.addEventListener('click', () => {
-    navbar.classList.toggle('active');
+    navLinks.style.display = "flex";
+    hamburger.style.display = "none";
+    closeIcon.style.display = "block";
+});
+
+// Close Navbar
+closeIcon.addEventListener('click', () => {
+    navLinks.style.display = "none";
+    hamburger.style.display = "block";
+    closeIcon.style.display = "none";
 });
