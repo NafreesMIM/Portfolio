@@ -1,26 +1,26 @@
-/* General Styles */
+/* General Reset and Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Body */
 body {
-    background-color: #f8f9fa;
+    background-color: #f4f7fc;
     color: #333;
-    line-height: 1.6;
     font-size: 16px;
+    line-height: 1.6;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #333;
+    background-color: #2c3e50;
     padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .container {
@@ -29,19 +29,20 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 .navbar .logo {
     color: #fff;
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: 600;
     text-decoration: none;
-    font-weight: bold;
 }
 
 .navbar .nav-links {
     list-style: none;
     display: flex;
+    align-items: center;
 }
 
 .navbar .nav-links li {
@@ -50,8 +51,14 @@ body {
 
 .navbar .nav-links li a {
     text-decoration: none;
-    color: #fff;
+    color: #ecf0f1;
     font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+    color: #ff6347;
 }
 
 .navbar .hamburger {
@@ -61,7 +68,7 @@ body {
 
 .navbar .hamburger i {
     color: #fff;
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .navbar .close-icon {
@@ -71,7 +78,7 @@ body {
 
 .navbar .close-icon i {
     color: #fff;
-    font-size: 30px;
+    font-size: 28px;
 }
 
 /* Hero Section */
@@ -83,26 +90,32 @@ body {
     align-items: center;
     color: #fff;
     text-align: center;
+    position: relative;
+    padding: 0 20px;
 }
 
 .hero-content h1 {
-    font-size: 50px;
-    font-weight: bold;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .hero-subtext {
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 10px;
+    font-weight: 300;
 }
 
 .cta-btn {
-    padding: 10px 20px;
-    background-color: #FF6347;
+    padding: 12px 25px;
+    background-color: #ff6347;
     color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 600;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
 .cta-btn:hover {
@@ -112,52 +125,60 @@ body {
 /* About Section */
 .about {
     background-color: #fff;
-    padding: 50px 0;
+    padding: 80px 0;
 }
 
 .about h2 {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-size: 42px;
+    margin-bottom: 40px;
+    font-weight: 700;
 }
 
 .about .intro-text {
     font-size: 18px;
-    margin-bottom: 30px;
     text-align: center;
     color: #555;
+    margin-bottom: 50px;
 }
 
 .experience, .skills {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .experience-card, .skill-card {
     background-color: #f9f9f9;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.experience-card:hover, .skill-card:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
 }
 
 .experience-card i, .skill-card i {
-    font-size: 30px;
-    color: #FF6347;
+    font-size: 32px;
+    color: #ff6347;
 }
 
 .experience-card h4, .skill-card h4 {
-    font-size: 20px;
-    margin-top: 10px;
+    font-size: 22px;
+    margin-top: 15px;
+    font-weight: 600;
 }
 
-.experience-card p {
+.experience-card p, .skill-card p {
     font-size: 16px;
     color: #555;
+    margin-top: 10px;
 }
 
 .experience-card ul {
     list-style-type: square;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .skill-card p {
@@ -168,32 +189,38 @@ body {
 /* Education Section */
 .education {
     background-color: #f1f1f1;
-    padding: 50px 0;
+    padding: 80px 0;
 }
 
 .education h2 {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-size: 42px;
+    margin-bottom: 40px;
+    font-weight: 700;
 }
 
 .education .education-card {
     display: flex;
     justify-content: space-between;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.education .education-card:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
 }
 
 .education .education-info {
-    width: 70%;
+    width: 75%;
 }
 
 .education .degree-title {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .education .institution-name {
@@ -208,36 +235,42 @@ body {
 
 .education .education-icon i {
     font-size: 40px;
-    color: #FF6347;
+    color: #ff6347;
 }
 
 /* Projects Section */
 .projects {
-    padding: 50px 0;
+    padding: 80px 0;
     background-color: #fff;
 }
 
 .projects h2 {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-size: 42px;
+    margin-bottom: 50px;
+    font-weight: 700;
 }
 
 .projects .project-card {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     flex-direction: column;
     align-items: center;
     background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.projects .project-card:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
 }
 
 .projects .project-image img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .projects .project-info {
@@ -246,13 +279,14 @@ body {
 }
 
 .projects .btn {
-    padding: 10px 20px;
-    background-color: #FF6347;
+    padding: 12px 30px;
+    background-color: #ff6347;
     color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 600;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
 .projects .btn:hover {
@@ -262,13 +296,14 @@ body {
 /* Contact Section */
 .contact {
     background-color: #f1f1f1;
-    padding: 50px 0;
+    padding: 80px 0;
     text-align: center;
 }
 
 .contact h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 42px;
+    margin-bottom: 30px;
+    font-weight: 700;
 }
 
 .contact p {
@@ -288,7 +323,8 @@ body {
 .social-links li a {
     text-decoration: none;
     font-size: 18px;
-    color: #FF6347;
+    color: #ff6347;
+    transition: color 0.3s ease;
 }
 
 .social-links li a:hover {
@@ -297,14 +333,16 @@ body {
 
 /* Footer */
 .footer {
-    background-color: #333;
+    background-color: #2c3e50;
     color: #fff;
-    padding: 20px 0;
+    padding: 30px 0;
     text-align: center;
+    font-size: 16px;
 }
 
 .footer p {
     font-size: 16px;
+    color: #ecf0f1;
 }
 
 /* Responsive Styles */
@@ -317,16 +355,12 @@ body {
         display: block;
     }
 
-    .navbar .close-icon {
-        display: none;
-    }
-
     .navbar.active .nav-links {
         display: block;
         position: absolute;
         top: 80px;
         right: 0;
-        background-color: #333;
+        background-color: #2c3e50;
         width: 100%;
         text-align: center;
         padding: 20px 0;
@@ -344,11 +378,16 @@ body {
     }
 
     .hero-content h1 {
-        font-size: 36px;
+        font-size: 40px;
     }
 
     .hero-subtext {
-        font-size: 14px;
+        font-size: 16px;
+    }
+
+    .cta-btn {
+        font-size: 16px;
+        padding: 10px 25px;
     }
 
     .about .container {
@@ -371,16 +410,16 @@ body {
 
 @media only screen and (max-width: 480px) {
     .hero-content h1 {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .hero-subtext {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .cta-btn {
-        padding: 8px 16px;
         font-size: 14px;
+        padding: 8px 20px;
     }
 
     .education .education-info p {
