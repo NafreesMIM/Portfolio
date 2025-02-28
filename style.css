@@ -72,7 +72,7 @@ body {
     color: #fff;
     text-align: center;
     position: relative;
-    padding: 0 20px;
+    padding: 80px 20px 0; /* Adjusted padding to prevent navbar overlap */
 }
 
 .hero-content h1 {
@@ -184,6 +184,7 @@ body {
     }
     .hero-section {
         height: 80vh;
+        padding-top: 100px; /* Adjusted to account for fixed navbar */
     }
     .hero-content h1 {
         font-size: 40px;
