@@ -210,7 +210,7 @@ body {
     height: 100vh;
     padding: 0 20px;
     padding-top: 300px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('background.jpg') no-repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('hero-bg.jpg') no-repeat;
     background-position: center;
     background-size: 45%;
     color: #fff;
