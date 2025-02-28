@@ -13,15 +13,19 @@ body {
     line-height: 1.6;
 }
 
-/* Navbar */
+/* Navbar with Transparent Background */
 .navbar {
-    background-color: #1e2a38;
+    background: rgba(30, 42, 56, 0.8);
     padding: 15px 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
+}
+
+.navbar:hover {
+    background: rgba(30, 42, 56, 1);
 }
 
 .navbar .container {
@@ -55,11 +59,15 @@ body {
     color: #dfe6eb;
     font-size: 16px;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
 }
 
 .navbar .nav-links li a:hover {
     color: #ff6b5a;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
 }
 
 /* Hero Section */
@@ -72,7 +80,7 @@ body {
     color: #fff;
     text-align: center;
     position: relative;
-    padding: 150px 100px 0; /* Adjusted padding to prevent navbar overlap */
+    padding: 80px 20px 0;
 }
 
 .hero-content h1 {
@@ -103,80 +111,6 @@ body {
     background-color: #e04e32;
 }
 
-/* About Section */
-.about {
-    background-color: #fff;
-    padding: 80px 0;
-    text-align: center;
-}
-
-.about h2 {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 40px;
-}
-
-.about .intro-text {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 50px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Contact Section */
-.contact {
-    background-color: #1e2a38;
-    padding: 80px 0;
-    text-align: center;
-    color: #fff;
-}
-
-.contact h2 {
-    font-size: 42px;
-    margin-bottom: 30px;
-    font-weight: 700;
-}
-
-.contact p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.social-links {
-    list-style: none;
-    padding: 0;
-}
-
-.social-links li {
-    margin-bottom: 15px;
-}
-
-.social-links li a {
-    text-decoration: none;
-    font-size: 18px;
-    color: #ff6b5a;
-    transition: color 0.3s ease;
-}
-
-.social-links li a:hover {
-    color: #e04e32;
-}
-
-/* Footer */
-.footer {
-    background-color: #1e2a38;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 16px;
-}
-
-.footer p {
-    color: #dfe6eb;
-}
-
 /* Responsive Design */
 @media only screen and (max-width: 768px) {
     .navbar .nav-links {
@@ -184,7 +118,7 @@ body {
     }
     .hero-section {
         height: 80vh;
-        padding-top: 100px; /* Adjusted to account for fixed navbar */
+        padding-top: 100px;
     }
     .hero-content h1 {
         font-size: 40px;
@@ -195,12 +129,6 @@ body {
     .cta-btn {
         font-size: 16px;
         padding: 10px 25px;
-    }
-    .about .container {
-        flex-direction: column;
-    }
-    .contact p {
-        font-size: 16px;
     }
 }
 
@@ -214,8 +142,5 @@ body {
     .cta-btn {
         font-size: 14px;
         padding: 8px 20px;
-    }
-    .contact p {
-        font-size: 14px;
     }
 }
