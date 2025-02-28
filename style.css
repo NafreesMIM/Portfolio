@@ -13,19 +13,21 @@ body {
     line-height: 1.6;
 }
 
-/* Navbar with Transparent Background */
+/* Modern Transparent Navbar */
 .navbar {
-    background: rgba(30, 42, 56, 0.8);
-    padding: 15px 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    padding: 15px 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease-in-out;
 }
 
 .navbar:hover {
-    background: rgba(30, 42, 56, 1);
+    background: rgba(0, 0, 0, 0.85);
 }
 
 .navbar .container {
@@ -39,9 +41,10 @@ body {
 
 .navbar .logo {
     color: #fff;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
     text-decoration: none;
+    letter-spacing: 1px;
 }
 
 .navbar .nav-links {
@@ -56,59 +59,65 @@ body {
 
 .navbar .nav-links li a {
     text-decoration: none;
-    color: #dfe6eb;
+    color: #ffffff;
     font-size: 16px;
     font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
 }
 
 .navbar .nav-links li a:hover {
-    color: #ff6b5a;
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
+    background: #ff6b5a;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 3px 15px rgba(255, 107, 90, 0.5);
 }
 
 /* Hero Section */
 .hero-section {
     background: url('hero-bg.jpg') no-repeat center center/cover;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
     text-align: center;
     position: relative;
-    padding: 180px 20px 0;
+    padding: 120px 20px 0;
 }
 
 .hero-content h1 {
-    font-size: 55px;
-    font-weight: 700;
+    font-size: 60px;
+    font-weight: 800;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .hero-subtext {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 400;
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto 30px;
 }
 
 .cta-btn {
-    padding: 12px 30px;
-    background-color: #ff6b5a;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #ff6b5a, #e04e32);
     color: #fff;
     font-size: 18px;
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(255, 107, 90, 0.4);
 }
 
 .cta-btn:hover {
-    background-color: #e04e32;
+    background: linear-gradient(135deg, #e04e32, #c43b22);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 90, 0.5);
 }
 
 /* Responsive Design */
@@ -117,30 +126,30 @@ body {
         display: none;
     }
     .hero-section {
-        height: 80vh;
-        padding-top: 100px;
+        height: 85vh;
+        padding-top: 120px;
     }
     .hero-content h1 {
-        font-size: 40px;
+        font-size: 42px;
     }
     .hero-subtext {
-        font-size: 16px;
+        font-size: 18px;
     }
     .cta-btn {
         font-size: 16px;
-        padding: 10px 25px;
+        padding: 12px 28px;
     }
 }
 
 @media only screen and (max-width: 480px) {
     .hero-content h1 {
-        font-size: 32px;
+        font-size: 34px;
     }
     .hero-subtext {
-        font-size: 14px;
+        font-size: 16px;
     }
     .cta-btn {
         font-size: 14px;
-        padding: 8px 20px;
+        padding: 10px 25px;
     }
 }
